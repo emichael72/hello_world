@@ -17,11 +17,11 @@ release: CFLAGS = $(CFLAGS_RELEASE)
 release: $(TARGET)
 
 $(BUILD_DIR)/%.o: %.c
-        @mkdir -p $(BUILD_DIR)
-        $(CC) $(CFLAGS) -c -o $@ $<
+	@mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(TARGET): $(OBJ)
-        $(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-        rm -rf $(BUILD_DIR)
+	rm -rf $(BUILD_DIR)
